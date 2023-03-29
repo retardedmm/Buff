@@ -21,6 +21,7 @@ public class BaseServlet extends HttpServlet {
             Method methodObject = clazz.getDeclaredMethod(method, HttpServletRequest.class, HttpServletResponse.class);
             methodObject.setAccessible(true);
             methodObject.invoke(this, request, response);
+            System.out.println("nice");
         } catch (Exception e) {
             e.printStackTrace();
             throw new RuntimeException(e);
